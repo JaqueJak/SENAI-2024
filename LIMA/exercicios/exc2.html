@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <h1>Formulário</h1>
+    <fieldset>
+        <legend>Dados</legend>
+        <p>Nome: <input type="text" name="nome" style="width: 500px" ></p>
+        <p>Endereço: <input type="text" name="endereço" style="width: 500px" ></p>
+        <p>Cidade: <input type="text" name="cidade" style="width: 500px" ></p>
+
+        <label for="estado">Estado: </label>
+        <select id="estado">
+            <option>São Paulo</option>
+            <option>Rio de Janeiro</option>
+            <option>Campinas</option>
+            <option>Belo Horizonte</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Dados profissionais</legend>
+        <p>Natureza do cargo</p>
+        <input type="radio" id="ger" name="cargo" />
+        <label for="ger">Gerência</label>
+        <input type="radio" id="finan" name="cargo" />
+        <label for="finan">Financeiro</label>
+        <input type="radio" id="recp" name="cargo" />
+        <label for="recp">Recepcão</label>
+        <input type="radio" id="Adm" name="cargo" />
+        <label for="Administrativo">Administrativo</label>
+        <input type="radio" id="juri" name="cargo" />
+        <label for="juri">Jurídico</label><br>        
+    </fieldset><br>
+
+    <fieldset>
+        <p>Área de interesse</p>
+
+        <input type="checkbox" name="area" value="1" />
+        <label for="area">Computação</label>
+
+        <input type="checkbox" name="area" value="2" />
+        <label for="area">Biologia</label>
+
+        <input type="checkbox" name="area" value="3" />
+        <label for="area">Meio Ambiente</label>
+
+        <input type="checkbox" name="area" value="4" />
+        <label for="area">Engenharia</label>
+
+        <input type="checkbox" name="area" value="5" />
+        <label for="area">Historia</label><br>
+
+        <br><label>Mini curriculo: </label><textarea name="txarea" rows="5" cols="30"></textarea>
+
+    </fieldset>
+
+</body>
+</html>
