@@ -1,27 +1,20 @@
 #include <stdio.h>
 
-/*
-    Desenvolva um programa que leia o nome de um time de futebol, o número de vitórias e o número de empates.
-    O programa deverá calcular e apresentar na tela, o nome do time e o total de pontos.
-    Lembrando que a vitória vale 3 pontos e o empate vale 1 ponto.
-*/
-
 int main() {
-    char clubName[15];
-    printf("Digite o nome do time do futebol desehado: ");
-    fgets(clubName, sizeof(clubName), stdin);
+	int totalpontos, numvitorias, numperdas,time;
 
-    int numVictory;
+    printf("Digite o nome do time de futebol: ");
+    scanf("%d", &time);
+
     printf("Digite a quantidade de vitorias que esse time teve: ");
-    scanf("%d", &numVictory);
+    scanf("%d", &numvitorias);
 
-    int numDraw;
     printf("Digite a quantidade de empates que esse time teve: ");
-    scanf("%d", &numDraw);
+    scanf("%d", &numperdas);
 
-    int totalPoints = numVictory * 3 + numDraw;
+    totalpontos = numvitorias * 3 + numperdas;
 
-    printf("O time %sEsta com %d vitorias e %d empates resultando em %d pontos.", clubName, numVictory, numDraw, totalPoints);
+    printf("O time %d Esta com %d vitorias e %d empates resultando em %d pontos.", time, numvitorias, numperdas, totalpontos);
 
     return 0;
 }

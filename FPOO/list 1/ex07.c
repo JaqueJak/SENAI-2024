@@ -1,27 +1,18 @@
 #include <stdio.h>
-
-/*
-    Um caminhão consegue transportar 18 toneladas de laranjas em uma viagem que faz entre
-    a fazenda e a fábrica de suco de laranja. Um alqueire de terra produz em média 250 toneladas de laranjas.
-    Faça um programa que leia quantos caminhões e quantos alqueires uma fazenda produtora de laranjas possui,
-    calcule e apresente na tela quantas viagens de caminhão serão necessárias para transportar toda a colheita de laranjas.
-*/
-
 int main() {
-    const int TRUCKCARGO = 18; // 18 Toneladas
-    const int FARMPRODUCTION = 250; // 250 Toneladas
+    int carga = 18;
+    int produto = 250; 
+    int producao;
+    printf("Digite a quantas fazendas de laranjas: ");
+    scanf("%d", &producao);
 
-    int numFarm;
-    printf("Digite a quantidade de fazendas produtoras de laranjas: ");
-    scanf("%d", &numFarm);
+    int caminhao;
+    printf("Digite quantos caminhoes para o transporte: ");
+    scanf("%d", &caminhao);
 
-    int numTruck;
-    printf("Digite a quantidade de caminhoes para o transporte: ");
-    scanf("%d", &numTruck);
+    int transporte = (producao * produto) / (produto * caminhao);
 
-    int totalTravel = (FARMPRODUCTION * numFarm) / (TRUCKCARGO * numTruck);
-
-    printf("Sera necessario aproximadamente %d viagens de %d caminhoes para transportar todas as laranjas.", totalTravel, numTruck);
+    printf("Sera necessario %d viagens de %d caminhoes para transportar todas as laranjas.", transporte, producao);
 
     return 0;
 }

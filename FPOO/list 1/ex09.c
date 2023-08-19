@@ -1,24 +1,17 @@
 #include <stdio.h>
-
-/*
-    Desenvolva um programa que leia o nome e o preço de uma mercadoria.
-    O programa deverá calcular um aumento de 5% no preço da mercadoria e mostrar o nome da mercadoria e o seu novo preço.
-*/
-
 int main() {
-    const int percentual = 5; // 5% de reajuste
+    int porcento = 5; // 5% de reajuste
 
-    char commodityName[15];
+    char produto;
     printf("Digite o nome do produto a receber um reajuste de preco: ");
-    fgets(commodityName, sizeof(commodityName), stdin);
+	scanf("%c", &produto);
+    int preco;
+    printf("Digite o valor do produto: R$");
+    scanf("%d", &preco);
 
-    float price;
-    printf("Digite o valor deste produto: R$");
-    scanf("%f", &price);
+    float novoValor = (preco * porcento / 100) + preco;
 
-    float newPrice = (price * percentual / 100) + price;
-
-    printf("O produto %sAgora custa R$%.2f com o reajuste de valor.", commodityName, newPrice);
+    printf("O produto %s Agora custa R$%.2f com o reajuste de valor.", produto, novoValor);
 
     return 0;
 }

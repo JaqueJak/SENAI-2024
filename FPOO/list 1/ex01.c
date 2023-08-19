@@ -1,25 +1,19 @@
 #include <stdio.h>
 
-/*
-    Desenvolva um programa que leia três variáveis (a, b, c) e resolva a expressão: ( a + b ) / c.
-*/
-
 int main() {
-    int firstValue;
-    printf("Digite o primeiro valor inteiro: ");
-    scanf("%d", &firstValue);
+    int x, z, y;
+    printf("Digite o um valor inteiro: ");
+    scanf("%d", &x);
 
-    int secondValue;
-    printf("Digite o segundo valor inteiro: ");
-    scanf("%d", &secondValue);
+    printf("Digite mais um valor inteiro: ");
+    scanf("%d", &z);
 
-    int thirdValue;
-    printf("Digite o terceiro valor inteiro: ");
-    scanf("%d", &thirdValue);
+    printf("Digite outro valor inteiro: ");
+    scanf("%d", &y);
 
-    float result = (firstValue + secondValue) / thirdValue;
+    float a = (x + z) / y;
 
-    printf("A soma de %d e %d divida por %d e igual a %.2f", firstValue, secondValue, thirdValue, result);
+    printf("A soma de %d e %d divida por %d e igual a %.f", x, z, y, a);
 
     return 0;
 }
