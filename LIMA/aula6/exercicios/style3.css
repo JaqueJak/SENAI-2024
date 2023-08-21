@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.red{
+    background-color: red;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.blue{
+    background-color: blue;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.green{
+    background-color: green;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
