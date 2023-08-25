@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <locale.h>
 int main(){
-	setlocale(LC_ALL,"";)
+	setlocale(LC_ALL,"");
     int num1, num2, i;
 
     printf("Digite o primeiro valor inteiro: ");

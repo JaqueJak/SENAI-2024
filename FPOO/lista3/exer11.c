@@ -1,31 +1,29 @@
 #include <stdio.h>
 #include <locale.h>
-
 int main(){
 	setlocale(LC_ALL,"");
-	
-int main(){
-	int num1, num2, num3, num4, num5;
-	
-    printf("Digite o primeiro numero inteiro: ");
-    scanf("%d", &num1);
-         
-    printf("Digite o segundo numero inteiro: ");
-    scanf("%d",&num2);
-         
-	printf("Digite o terceiro numero inteiro: ");
-    scanf ("%d", &num3);
-    
-    printf("Digite o terceiro numero inteiro: ");
-    scanf ("%d", &num4);
-    
-    printf("Digite o terceiro numero inteiro: ");
-    scanf ("%d", &num5);
-         
-	if ((num1 < num2 < num3 < num4 < num5) && (!(num1 > num2 > num3 > num4 > num5) && (num1 < num2 > num3 < num4 > num5)))
-	
-		printf("segue lista de numeros em órdem crescente: %d %d %d %d %d\n", num1, num2, num3, num4, num5); 
+    int i, a, numeros[5];
+
+    printf("Digite 5 números inteiros:\n");
+    for (i = 0; i < 5; i++) {
+        scanf("%d", &numeros[i]);
+    }
+
+    for (i = 0; i < 4; i++) {
+        for (a = 0; a < 4 - i; a++) {
+            if (numeros[a] > numeros[a + 1]) {
+                int temp = numeros[a];
+                numeros[a] = numeros[a + 1];
+                numeros[a + 1] = temp;
+            }
+        }
+    }
+    printf("Números em ordem crescente:\n");
+    for (i = 0; i < 5; i++) {
+        printf("%d ", numeros[i]);
+    }
+    printf("\n");
+
+    return 0;
 }
 
-	return 0;
-}

@@ -2,20 +2,19 @@
 #include <locale.h>
 int main(){
 	setlocale(LC_ALL,"");
-	int num, i;
-	unsigned long long vezes = 1;
-	
-	printf("Digite um número inteiro positivo: ");
-	scanf("%d\n", &num);
-	
-	if(num < 0){
-		printf("Conta não programada para números negativos!\n");
-	}else {
-		for (i = 0; i <= num; i++){
-			vezes *= i;
-		}
-		printf("A soma é %d é %llu\n", num, vezes);
-	}
-	
-	return 0;
+    int i, numero;
+
+    printf("Digite um número entre 0 e 10: ");
+    scanf("%d", &numero);
+
+    if (numero < 0 || numero > 10) {
+        printf("Número fora do intervalo permitido.\n");
+    } else {
+        printf("Tabuada do %d:\n", numero);
+        for (i = 1; i <= 10; i++) {
+            printf("%d x %d = %d\n", numero, i, numero * i);
+        }
+    }
+    return 0;
 }
+
