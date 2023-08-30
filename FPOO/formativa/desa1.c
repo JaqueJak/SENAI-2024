@@ -4,38 +4,43 @@
 
 int main(){
 	setlocale(LC_ALL,"");
-	char nome[15], genero;
-	int i, total, idade, dias, status;
+	char nome[15], genero[15];
+	int i, total, idade[15], dias[15];
 	
 	printf("Informe a quantidade de doadores: ");
 	scanf("%d", &total);
 	
-	for(i = 0; i < total; i++){
+	for(i = 1; i <= total; i++){
 		printf("Digite seu nome: ");
-		scanf("%s", &nome);
-		printf("Digite sua idade: ");
-		scanf("%d", &idade);
-		printf("Informe seu gênero F.feminino ou M.masculino: ");
-		scanf("%s", &genero);
-		printf("Informe o tempo em que está sem doar sangue: ");
-		scanf("%d", &dias);
+		scanf("%s", &nome[i]);
+		nome[i] + i;
 		
-		if(genero == 'F'){
-			if(dias >= 90)
-			printf("Apto");
-			scanf("%d", &status);
-			else printf("Inapto");
-			scanf("%d", &status);
-		}else if(genero == 'M'){
-			if(dias >= 60)
-			printf("Apto");
-			scanf("%d", &status);
-			else printf("Inapto");
-			scanf("%d", &status);
+		printf("Digite sua idade: ");
+		scanf("%d", &idade[i]);
+		idade[i] + i;
+		
+		printf("Informe seu gênero F.feminino ou M.masculino: ");
+		scanf("%s", &genero[i]);
+		genero[i] + i;
+		
+		printf("Informe o tempo em que está sem doar sangue: ");
+		scanf("%d", &dias[i]);
+		dias[i] + i;
+		
+		}if(genero[i] == "F"){
+			if(dias[i] > 90)
+			printf("\nApto");
+			else{
+				printf("\nInapto");
+			} 
 		}
-}
-		printf("Nome: %s\n Idade: %d\n Genero: %s Status: %d", nome, idade, genero, status);
-	
+		
+		if(genero[i], "M"){
+			if(dias[i] > 60)
+			printf("\nApto");
+			else{
+				printf("\nInapto");
+			} 
 	}
 	
 	return 0;
