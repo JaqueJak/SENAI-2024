@@ -25,6 +25,6 @@ int frases(char frase[], int n){
 }
 
 int main (){
-	frases("Palmeiras não tem mundial", 5000000000000);
+	frases("Palmeiras não tem mundial", 5000);
 	return 0;
 }
