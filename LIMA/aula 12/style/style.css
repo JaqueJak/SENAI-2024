@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main div img{
+    height: 450px;
+    border: 2px solid var(--Amarelo);
+    border-radius: 100px 0 100px 0;
+    margin-right: 50px;
+}

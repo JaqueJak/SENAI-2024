@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #ddd;
+}
+
+main{
+    margin-left: 200px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 40px;    
+    border-bottom: 3px solid black;
+}
+
+.busca{
+    display: flex;
+    align-items: center;
+
+}
+
+.busca img{
+    position: relative;
+    transform: translate(-30px);
+    width: 20px;
+}
+.busca input{
+    display: flex;
+    width: 250px;
+    height: 40px;
+    background-color: gray;
+    border-radius: 50px;
+}
+
+.nada{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.nada .dolar span{
+    color: red;
+}
+
+.nada .euro span{
+    color:chartreuse;
+}
+
+.nada .pedr span{
+    color: cyan;
+}
+
+.logos{
+    justify-content: center;
+    display: flex;
+    
+}
+
+.logos img{
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    height: 80px;
+    margin-inline: 430px;
+}
+.bind img{
+    width:300px;
+    height:200px;
+    margin: 60px 0 0 0;
+}
+
+.bind{
+    display: flex;
+    flex-direction: column;
+}
+
+.vacinas img{
+    width: 300px;
+    height: 200px;
+}
+
+.vacina{
+    display: flex;
+    flex-direction: column;
+}
+
+.indi img{
+    width: 300px;
+    height: 200px;
+}
+
+.indi{
+    display: flex;
+}
+
+.text{
+    margin-top: 21px;
+    padding: 25px;
+}
