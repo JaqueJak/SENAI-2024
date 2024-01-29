@@ -3,24 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lojinha</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Database Show</title>
 </head>
 <body>
-    <header>
-        <h1>Listar todos os clientes</h1>
-    </header>
-    <nav>
-        <a href="./form.html">Listar todos</a>
-        <a href="./index.html">Cadastrar</a>
-    </nav>
-    <main>
+    <header></header>
+
+    <main style="flex-direction: column;">
+        <h1>Erro!</h1>
+        <br>
+        <h2>Algo deu errado!</h2>
         <h2 id="erro"></h2>
     </main>
-    <footer>By Jak</footer>
 
+    <footer></footer>
 </body>
 <script>
-    const erro = 
-      
+    const erro = document.getElementById("erro");
+    const url = window.location.search;
+    const params = new URLSearchParams(url);
+    const msg = params.get("erro");
+    const error = params.get("err");
+    const cod = params.get("errcod");
+    erro.innerHTML = `Erro ${cod}: ${msg}`
+    erro.innerHTML += `<br> ${error} <br> <a href="http://127.0.0.1:5500/front/index.html">Voltar</a>`
 </script>
 </html>

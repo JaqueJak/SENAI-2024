@@ -3,27 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clientes</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Cadastro de clientes</h1>
-    </header>
-    <nav>
-        <a href="./form.html">Listar todos</a>
-        <a href="./index.html">Cadastrar</a>
-    </nav>
-    <main>
-        <form action="http://127.0.0.1:3000/clientes" method="post">
-            <input type="text" name="cpf" id="" placeholder="CPF" required>
-            <input type="text" name="nome" id="" placeholder="Nome" required>
-            <input type="text" name="sobrenome" id="" placeholder="Sobrenome" required>
-            <input type="date" name="nascimento" id="" placeholder="Nascimento" required>
+    <div class="container">
+        <form action="http://localhost:3000/Clientes" method="POST">
+            <div>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" required>
+            </div>
+    
+            <div>
+                <label for="sobrenome">Sobrenome:</label>
+                <input type="text" name="sobrenome" required>
+            </div>
+    
+            <div>
+                <label for="nascimento">Nascimento:</label>
+                <input type="date" name="nascimento" required>
+            </div>
+    
+            <div>
+                <label for="cpf">CPF:</label>
+                <input id="cpf" type="text" name="cpf" required maxlength="11">
+            </div>
+            
             <input type="submit" value="Enviar">
         </form>
-    </main>
-    <footer>
-        <h2>By Jak</h2>
-    </footer>
+    </div>
 </body>
 </html>
