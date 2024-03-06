@@ -4,34 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Cadastro</title>
-    <script src="script.js" defer></script>
+    <title>Document</title>
 </head>
 <body>
-    <div class="container">
-        <form action="http://localhost:3000/Clientes" method="POST">
-            <div>
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" required>
-            </div>
-    
-            <div>
-                <label for="sobrenome">Sobrenome:</label>
-                <input type="text" name="sobrenome" required>
-            </div>
-    
-            <div>
-                <label for="nascimento">Nascimento:</label>
-                <input type="date" name="nascimento" required>
-            </div>
-    
-            <div>
-                <label for="cpf">CPF:</label>
-                <input id="cpf" type="text" name="cpf" required maxlength="11">
-            </div>
-            
+    <header>
+        <h1>Cadastro de Clientes</h1>
+    </header>
+    <main>
+        <form action="http://localhost:3000/clientes/create" method="post">
+            <input type="text" name="cpf" placeholder="cpf" required>
+            <input type="text" name="nome" placeholder="nome" required>
+            <input type="text" name="sobrenome" placeholder="sobrenome" required>
+            <input type="date" name="nascimento" placeholder="nascimento" required>
             <input type="submit" value="Enviar">
         </form>
-    </div>
+    </main>
+    <footer>
+        <h2>By Wellington</h2>
+    </footer>
 </body>
 </html>

@@ -2,7 +2,6 @@
 const express = require("express");
 const mysql = require("mysql");
 const cors = require("cors");
-const bodyParser = require("body-parser");
 
 //Conexão com o SGBD MySQL
 const con = mysql.createConnection({
@@ -13,29 +12,28 @@ const con = mysql.createConnection({
 
 //Rota de teste
 const teste = (req, res) => {
-    res.send("Back-end respondendo");
+    res.send("Back-end respondendo ");
 }
 
 //CRUD - create
 const create = (req, res) => {
-    let cpf = req.body.cpf;
-    let nome = req.body.nome;
-    let sobrenome = req.body.sobrenome;
-    let nascimento = req.body.nascimento;
-    
+    let cpf = req.query.cpf;
+    let nome = req.query.nome;
+    let sobrenome = req.query.sobrenome;
+    let nascimento = req.query.nascimento;
     let query = `INSERT INTO clientes(cpf, nome, sobrenome, nascimento) VALUE`;
     query += `('${cpf}', '${nome}', '${sobrenome}', '${nascimento}');`;
     con.query(query,(err, result)=>{
         if(err)
-            res.redirect('http://127.0.0.1:5500/front/erro.html?erro=CPF JÁ CADASTRADO&errcod=' + err.errno + '&err=' + err.code);
+            res.json(err);
         else
-            res.redirect('http://127.0.0.1:5500/front/index.html');
+            res.json(result);
     });
 }
 
 //CRUD - Read
 const read = (req, res) => {
-    con.query("SELECT * FROM Clientes ORDER BY id DESC",(err, result)=>{
+    con.query("SELECT * FROM Clientes",(err, result)=>{
         if(err)
             res.json(err);
         else
@@ -47,11 +45,10 @@ const read = (req, res) => {
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 //Rotas de Saída - FrontEnd
 app.get("/", teste);
-app.post("/clientes", create);
+app.get("/clientes/create", create);
 app.get("/clientes", read);
 
 //Teste e porta no console

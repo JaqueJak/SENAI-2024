@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastro</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <form action="http://localhost:3000/Clientes" method="POST">
+            <div>
+                <label for="nome">Produto:</label>
+                <input type="text" name="nome" required>
+            </div>
+    
+            <div>
+                <label for="sobrenome">Estoque:</label>
+                <input type="text" name="sobrenome" required>
+            </div>
+    
+            <div>
+                <label for="nascimento">Valor:</label>
+                <input type="date" name="nascimento" required>
+            </div>
+            
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>
