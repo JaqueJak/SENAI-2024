@@ -129,3 +129,6 @@ select * from rota;
 select * from veiculo;
 select * from entrega;
 select * from pedido;
+
+
+select * from relatorio_de_entregas_02;
