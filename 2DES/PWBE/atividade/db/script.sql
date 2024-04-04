@@ -8,7 +8,6 @@ CREATE TABLE funcionario(
     nome varchar(50) not null,
     primary key (matricula)
 );
-
 CREATE TABLE telefone(
     matricula int not null,
     numero varchar(15) not null,
@@ -59,6 +58,7 @@ insert into veiculo(placa, modelo, marca, ano)values
 ('BEB-5885','Gol','VW',2013),
 ('EDB-2475','Ranger','Ford',2005);
 
+
 insert into manutencao(id,inicio,fim,descricao,matricula,placa)values
 (1,'2023-02-25','2023-03-04','Lanterna queimada',48482,'DEA-7981'),
 (2,'2023-03-13','2023-03-21','Farol queimado',48542,'CBC-4945'),
@@ -73,4 +73,10 @@ insert into manutencao(id,inicio,fim,descricao,matricula,placa)values
 (11,'2023-08-24','2023-08-31','Pane elétrica',48562,'CBA-4403'),
 (12,'2023-08-27','2023-09-04','Rebimboca da parafuzeta',48522,'BBC-8504'),
 (13,'2023-08-30','2023-09-04','Troca de cavalos por poneis',48542,'BEE-7735'),
-(14,'2023-09-02','2023-09-07','Lanterna queimada',48482,'BEB-5885');
+(14,'2023-09-02','2023-09-07','Lanterna queimada',48482,'BEB-5885'),
+(15,'2023-09-02', NULL ,'Lanterna quebrada',48482,'BEB-5885');
+
+select * from funcionario;
+select * from telefone;
+select * from veiculo;
+select * from manutencao;
