@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+Body{
+    font-family: 'Poppins', sans-serif;
+    background-color: aliceblue;
+}
+
+.container{
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.controls button{
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: aqua;
+    color: azure;
+    cursor: Ipointer;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover{
+    background-color: blue;
+}
+
+.song-item{
+    display: flex;
+    align-items: center;
+}
+
+.cover-image{
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.playlist{
+    margin-top: 50px;
+}
+
+.playlist ul{
+    list-style: none;
+    padding: 0;
+}
+
+.playlist li{
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.playlist li:hover{
+    background-color: azure;
+}
