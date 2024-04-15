@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+.container{
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    flex-direction: column;
+    background-color: #333;
+    padding: 20px;
+}
+.controls button {
+    margin: 10px;
+    padding: 10px 20px;
+    border:none;
+    background-color: #17b970;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.controls button:hover{
+    background-color:crimson; /* Cor de fundo dos botões */
+    color: #fff; /* Cor do texto dos botões */
+    border: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    
+}
+.song-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 50px;
+}
+.cover-image {
+    width: 50px;
+    height: auto;
+    margin-right: 10px; 
+}
+.coverImage {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+
+}
+.playlist {
+    margin-top: 50px;
+    background-color: #444; /* Cor de fundo da lista de reprodução */
+    padding: 20px;
+}
+.playlist ul {
+    list-style:none;
+    padding: 0;
+}
+.playlist li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+.playlist li:hover {
+    background-color: #f9f9f9;
+}
+
+
+
+
+
+
+/* Estilizando a área do tocador */
+.player {
+    margin-bottom: 20px;
+}
+
+/* Estilizando a capa do álbum */
+.cover-container {
+    text-align: center;
+}
+
+/* Estilizando a imagem da capa do álbum */
+#coverImage {
+    max-width: 200px; /* Define a largura máxima da imagem do álbum */
+    border: 5px solid red; /* Borda vermelha ao redor da imagem do álbum */
+}
+
+/* Estilizando os controles do player */
+.controls {
+    text-align: center;
+}
+
+
+
+
+/* Estilizando o título da lista de reprodução */
+.playlist h2 {
+    color: red; /* Cor do título da lista de reprodução */
+}
+
+/* Estilizando os itens da lista de reprodução */
+.song-item {
+    color: #fff; /* Cor do texto dos itens da lista de reprodução */
+}
+
+/* Estilizando as imagens da capa do álbum na lista de reprodução */
+.coverImage {
+    max-width: 50px; /* Define a largura máxima da imagem da capa do álbum na lista de reprodução */
+    margin-right: 10px;
+}
