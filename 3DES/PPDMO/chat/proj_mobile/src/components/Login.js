@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Login.css'; // Verifique o caminho correto do arquivo CSS
 
 const Login = ({ onLogin, onSignUp }) => {
   const [username, setUsername] = useState('');

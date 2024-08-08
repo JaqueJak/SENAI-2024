@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import Quiz from './components/Quiz';
 import Login from './components/Login';
-import Menu from './components/Menu';
 import SignUp from './components/SignUp';
 import AdminPanel from './components/AdminPanel';
+import Quiz from './components/Quiz'; // Importar Quiz para navegação de quizzes
+import Menu from './components/Menu'; // Importar Menu para navegação do menu
 import './App.css';
 
 const App = () => {
@@ -23,17 +23,22 @@ const App = () => {
     }
   };
 
+  const handleSignUp = (newUser) => {
+    setUsers([...users, { ...newUser, role: 'user' }]);
+    setShowSignUp(false);
+  };
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    setCurrentUser(null);
+  };
+
   const handleSelectQuiz = (quiz) => {
     setSelectedQuiz(quiz);
   };
 
   const handleBackToMenu = () => {
     setSelectedQuiz(null);
-  };
-
-  const handleSignUp = (newUser) => {
-    setUsers([...users, { ...newUser, role: 'user' }]);
-    setShowSignUp(false);
   };
 
   return (
@@ -43,9 +48,9 @@ const App = () => {
         selectedQuiz ? (
           <Quiz quizType={selectedQuiz} onBackToMenu={handleBackToMenu} />
         ) : currentUser.role === 'admin' ? (
-          <AdminPanel onSelectQuiz={handleSelectQuiz} />
+          <AdminPanel onLogout={handleLogout} />
         ) : (
-          <Menu onSelectQuiz={handleSelectQuiz} />
+          <Menu onSelectQuiz={handleSelectQuiz} onLogout={handleLogout} />
         )
       ) : (
         showSignUp ? (

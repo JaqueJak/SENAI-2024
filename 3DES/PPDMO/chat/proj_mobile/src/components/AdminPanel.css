@@ -1,0 +1,72 @@
+.admin-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Faz com que o container ocupe toda a altura da tela */
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif; /* Definindo uma fonte padrão */
+}
+
+.admin-panel h2 {
+  margin-top: 0;
+  font-size: 24px; /* Tamanho da fonte para o título */
+  color: #5c0b8a; /* Cor do texto */
+}
+
+.admin-panel label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #5c0b8a; /* Fonte em negrito para rótulos */
+}
+
+.admin-panel button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.admin-panel select {
+  margin-bottom: 10px;
+  padding: 8px;
+  font-size: 16px;
+}
+
+.question-container {
+  flex: 1; /* Permite que esta área cresça para preencher o espaço restante */
+  overflow-y: auto; /* Adiciona uma barra de rolagem se o conteúdo for muito longo */
+}
+
+button {
+  margin-top: 10px;
+}
+
+h3 {
+  margin-top: 20px;
+  font-size: 20px; /* Tamanho da fonte para subtítulo */
+  color: #555; /* Cor do texto */
+  
+}
+
+.question-container {
+  flex: 1; /* Permite que esta área cresça para preencher o espaço restante */
+  overflow-y: auto; /* Adiciona uma barra de rolagem se o conteúdo for muito longo */
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+li div {
+  margin-bottom: 5px;
+}
+
+li button {
+  margin-top: 5px;
+}

@@ -1,36 +1,62 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import './AdminPanel.css'; // Adapte o caminho do CSS conforme necessário
 
-const AdminPanel = ({ onSelectQuiz }) => {
-  const [quizType, setQuizType] = useState('marvel');
+const AdminPanel = ({ onLogout }) => {
   const [question, setQuestion] = useState('');
   const [options, setOptions] = useState(['', '', '', '']);
   const [answer, setAnswer] = useState('');
-  const [questions, setQuestions] = useState({
-    marvel: [],
-    general: [],
-    series: []
-  });
+  const [quizType, setQuizType] = useState('marvel'); // Tipo de quiz atual
+  const [questions, setQuestions] = useState([]);
+
+  useEffect(() => {
+    // Carrega as perguntas do localStorage ao inicializar o componente
+    const loadQuestions = () => {
+      const storedQuestions = JSON.parse(localStorage.getItem('questions')) || {
+        marvel: [],
+        general: [],
+        series: []
+      };
+      setQuestions(storedQuestions[quizType] || []);
+    };
+
+    loadQuestions();
+  }, [quizType]);
 
   const handleAddQuestion = () => {
-    const newQuestion = { question, options, answer };
-    setQuestions({
-      ...questions,
-      [quizType]: [...questions[quizType], newQuestion]
-    });
-    setQuestion('');
-    setOptions(['', '', '', '']);
-    setAnswer('');
+    if (question && options.every(opt => opt) && answer) {
+      const newQuestion = { question, options, answer };
+      const updatedQuestions = [...questions, newQuestion];
+      setQuestions(updatedQuestions);
+      
+      // Atualiza o localStorage
+      const storedQuestions = JSON.parse(localStorage.getItem('questions')) || {
+        marvel: [],
+        general: [],
+        series: []
+      };
+      storedQuestions[quizType] = updatedQuestions;
+      localStorage.setItem('questions', JSON.stringify(storedQuestions));
+
+      setQuestion('');
+      setOptions(['', '', '', '']);
+      setAnswer('');
+    } else {
+      alert('Por favor, preencha todos os campos.');
+    }
   };
 
   const handleDeleteQuestion = (index) => {
-    setQuestions({
-      ...questions,
-      [quizType]: questions[quizType].filter((_, i) => i !== index)
-    });
-  };
-
-  const handleBackToMenu = () => {
-    onSelectQuiz(null); // Chama a função passada como prop para voltar ao menu
+    const updatedQuestions = questions.filter((_, i) => i !== index);
+    setQuestions(updatedQuestions);
+    
+    // Atualiza o localStorage
+    const storedQuestions = JSON.parse(localStorage.getItem('questions')) || {
+      marvel: [],
+      general: [],
+      series: []
+    };
+    storedQuestions[quizType] = updatedQuestions;
+    localStorage.setItem('questions', JSON.stringify(storedQuestions));
   };
 
   return (
@@ -79,10 +105,10 @@ const AdminPanel = ({ onSelectQuiz }) => {
         />
       </div>
       <button onClick={handleAddQuestion}>Adicionar Pergunta</button>
-
+      <button onClick={onLogout}>Sair</button>
       <h3>Perguntas</h3>
       <ul>
-        {questions[quizType].map((q, index) => (
+        {questions.map((q, index) => (
           <li key={index}>
             <div><strong>Pergunta:</strong> {q.question}</div>
             <div><strong>Opções:</strong> {q.options.join(', ')}</div>
@@ -91,7 +117,6 @@ const AdminPanel = ({ onSelectQuiz }) => {
           </li>
         ))}
       </ul>
-      <button onClick={handleBackToMenu}>Voltar ao Menu</button>
     </div>
   );
 };

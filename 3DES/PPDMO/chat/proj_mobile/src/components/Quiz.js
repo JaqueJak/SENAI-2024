@@ -8,50 +8,14 @@ const Quiz = ({ quizType, onBackToMenu }) => {
   const [score, setScore] = useState(0);
 
   useEffect(() => {
-    // Simulação de carregamento de perguntas baseado no tipo de quiz
-    // Substitua isso pelo código para carregar suas perguntas reais
+    // Carrega as perguntas do localStorage baseadas no tipo de quiz
     const loadQuestions = () => {
-      // Exemplo de perguntas - substitua com dados reais
-      const exampleQuestions = {
-        marvel: [
-          {
-            question: "Qual é o verdadeiro nome do Homem de Ferro?",
-            options: ["Tony Stark", "Steve Rogers", "Bruce Banner", "Natasha Romanoff"],
-            answer: "Tony Stark"
-          },
-          {
-            question: "Quem é o pai de Thor?",
-            options: ["Loki", "Odin", "Hela", "Frigga"],
-            answer: "Odin"
-          }
-        ],
-        general: [
-          {
-            question: "Qual é a capital da França?",
-            options: ["Paris", "Londres", "Berlim", "Madri"],
-            answer: "Paris"
-          },
-          {
-            question: "Qual é o maior oceano do mundo?",
-            options: ["Atlântico", "Índico", "Pacífico", "Ártico"],
-            answer: "Pacífico"
-          }
-        ],
-        series: [
-          {
-            question: "Qual série é sobre um professor de química que se torna fabricante de metanfetaminas?",
-            options: ["Breaking Bad", "Game of Thrones", "Stranger Things", "The Crown"],
-            answer: "Breaking Bad"
-          },
-          {
-            question: "Qual série é ambientada em uma prisão?",
-            options: ["Prison Break", "The Office", "Friends", "Sherlock"],
-            answer: "Prison Break"
-          }
-        ]
+      const storedQuestions = JSON.parse(localStorage.getItem('questions')) || {
+        marvel: [],
+        general: [],
+        series: []
       };
-
-      setQuestions(exampleQuestions[quizType] || []);
+      setQuestions(storedQuestions[quizType] || []);
     };
 
     loadQuestions();
@@ -59,20 +23,18 @@ const Quiz = ({ quizType, onBackToMenu }) => {
 
   const handleOptionSelect = (option) => {
     setSelectedOption(option);
-  };
-
-  const handleSubmit = () => {
-    if (questions.length === 0) return; // Verificar se há perguntas
     const correctOption = questions[currentQuestionIndex]?.answer;
-    if (selectedOption === correctOption) {
+    if (option === correctOption) {
       setScore(score + 1);
     }
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedOption('');
-    } else {
-      setShowResult(true);
-    }
+    setTimeout(() => {
+      if (currentQuestionIndex < questions.length - 1) {
+        setCurrentQuestionIndex(currentQuestionIndex + 1);
+        setSelectedOption('');
+      } else {
+        setShowResult(true);
+      }
+    }, 500); // Adiciona um pequeno atraso para melhorar a experiência do usuário
   };
 
   return (
@@ -99,7 +61,6 @@ const Quiz = ({ quizType, onBackToMenu }) => {
                   </button>
                 ))}
               </div>
-              <button onClick={handleSubmit}>Próxima Pergunta</button>
             </>
           ) : (
             <p>Carregando perguntas...</p>
