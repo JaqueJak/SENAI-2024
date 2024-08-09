@@ -106,7 +106,6 @@ const AdminPanel = ({ onLogout }) => {
       </div>
       <button onClick={handleAddQuestion}>Adicionar Pergunta</button>
       <button onClick={onLogout}>Sair</button>
-      <h3>Perguntas</h3>
       <ul>
         {questions.map((q, index) => (
           <li key={index}>

@@ -10,21 +10,14 @@
 .admin-panel h2 {
   margin-top: 0;
   font-size: 24px; /* Tamanho da fonte para o título */
-  color: #5c0b8a; /* Cor do texto */
+  color: #e8e1eb; /* Cor do texto */
 }
 
 .admin-panel label {
   display: block;
   margin: 10px 0 5px;
   font-weight: bold;
-  color: #5c0b8a; /* Fonte em negrito para rótulos */
-}
-
-.admin-panel button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+  color: #e8e1eb; /* Fonte em negrito para rótulos */
 }
 
 .admin-panel select {
@@ -38,29 +31,25 @@
   overflow-y: auto; /* Adiciona uma barra de rolagem se o conteúdo for muito longo */
 }
 
-button {
-  margin-top: 10px;
-}
-
 h3 {
   margin-top: 20px;
   font-size: 20px; /* Tamanho da fonte para subtítulo */
-  color: #555; /* Cor do texto */
-  
-}
-
-.question-container {
-  flex: 1; /* Permite que esta área cresça para preencher o espaço restante */
-  overflow-y: auto; /* Adiciona uma barra de rolagem se o conteúdo for muito longo */
+  color: #b9b7b7; /* Cor do texto */
 }
 
 ul {
   list-style-type: none;
   padding: 0;
+  margin-top: 50px;
 }
 
 li {
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Espaçamento entre os itens da lista */
+  padding: 10px;
+  border: 1px solid #ccc; /* Adiciona uma borda ao redor de cada item */
+  border-radius: 5px; /* Adiciona cantos arredondados */
+  background-color: #f2f2f2;
+  color:#b9b7b7 /* Cinza mais claro para o fundo dos itens */
 }
 
 li div {
@@ -69,4 +58,9 @@ li div {
 
 li button {
   margin-top: 5px;
+}
+
+
+.admin-panel button:hover {
+  opacity: 0.8; /* Efeito hover para todos os botões */
 }
