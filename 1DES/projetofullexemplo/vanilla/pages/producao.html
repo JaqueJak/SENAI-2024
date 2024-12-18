@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link rel="shortcut icon" href="../assets/icone.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>ServiFacil</title>
+</head>
+
+<body onload="iniciarProducao()">
+    <header>
+        <nav id="menu2">
+            <img onclick="sandwish()" id="sandwish" src="../assets/menu.png"/>
+        </nav>
+        <div>
+            <h1 class="a">S</h1>
+            <h1 class="b">ervi</h1>
+            <h1 class="c">Facil</h1>
+        </div>
+        <nav id="menu1">
+            <button onclick="window.location.href='./home.html'" id="bt1">Home</button>
+            <button onclick="window.location.href='./dashboard.html'" id="bt2">Dashboard</button>
+            <button onclick="sair()" id="bt3">Sair</button>
+        </nav>
+    </header>
+    <main>
+        <div class="filtros">
+            <h3>A partid de:</h3>
+            <input type="date" name="inicio" id="inicio" onchange="filtrarDataProducao(this)" />
+            <button onclick="window.location.reload()" style="margin:5px">Redefinir</button>
+        </div>
+        <div class="container"></div>
+    </main>
+    <footer>
+        <h2>By Prof. Wellington</h2>
+        <h2 class="msg">Mensagens do sistema</h2>
+    </footer>
+    <div class="modal oculto" id="os"></div>
+    <div class="modal oculto" id="comentario"></div>
+</body>
+<script src="../scripts/script.js"></script>
+
+</html>

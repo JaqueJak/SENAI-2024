@@ -1,0 +1,64 @@
+/* Estilos globais */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  background-image: url('https://www.transparenttextures.com/patterns/question.png'); /* Fundo com interrogações */
+  background-repeat: repeat;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Centraliza verticalmente */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+button {
+  padding: 10px;
+  background-color: #6a0dad; /* Roxo escuro */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Adiciona espaçamento entre os botões */
+}
+
+button:hover {
+  background-color: #5c0b8a; /* Roxo um pouco mais escuro */
+}
+
+button:active {
+  background-color: #4e0877; /* Roxo ainda mais escuro */
+}
+
+/* Links */
+a {
+  color: #6a0dad;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo de formulários */
+input, select, textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
